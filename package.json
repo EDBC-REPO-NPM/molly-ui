@@ -1,0 +1,31 @@
+{
+	"license": "MIT",
+	"main": "main.js",
+	"name": "molly-ui",
+	"version": "1.0.1",
+	"author": "becerraenmanuel",
+	"scripts": {
+		"build-molly": "./compile.sh"
+	},
+	"repository": "https://github.com/EDBC-REPO-NPM/Molly-js",
+	"description": "Free and opensource frontend framework for molly-js",
+	"keywords": [
+		"nodejs",
+		"nodejs-http",
+		"nodejs-https",
+		"backend-server",
+		"nodejs-backend",
+		"backend-server",
+		"nodejs-http-server"
+	],
+	"devDependencies": {
+		"babelify": "^10.0.0",
+		"@babel/core": "^7.20.2",
+		"fetch-polyfill": "^0.8.2",
+		"@babel/polyfill": "^7.12.1",
+		"@babel/preset-env": "^7.20.2",
+		"clipboard-polyfill": "^4.0.0-rc1",
+		"intersection-observer": "^0.12.2",
+		"url-search-params-polyfill": "^8.1.1"
+	}
+}
