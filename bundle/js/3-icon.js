@@ -15,8 +15,6 @@
 
     if (typeof window !== 'undefined' && window.UIkit) {
       window.UIkit.use(plugin);
-    }
-
-    return plugin;
+    } return plugin;
 
 }));

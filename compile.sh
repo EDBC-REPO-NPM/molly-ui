@@ -2,10 +2,9 @@
 
 echo 'building mollyUI.js'
 
-node ./compiler/jsBundle.js > ./bundle/compiled.js
-browserify -t [ babelify ] ./bundle/compiled.js > ./bundle/minify.js
+browserify -t [ babelify --presets [@babel/preset-env] ] ./bundle/js/1-main.js > ./bundle/minify.js
 minify ./bundle/minify.js > ./bundle/bundle.js
-rm -R ./bundle/minify.js ./bundle/compiled.js
+rm -R ./bundle/minify.js
 
 echo 'building mollyUI.css'
 
