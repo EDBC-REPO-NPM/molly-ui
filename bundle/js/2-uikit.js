@@ -1,9 +1,5 @@
 /*! UIkit 3.15.6 | https://www.getuikit.com | (c) 2014 - 2022 YOOtheme | MIT License */
 
-	//TODO: polyfills ----------------------------------------------------------------------------//
-	require("@babel/polyfill/noConflict");
-	//TODO: polyfills ----------------------------------------------------------------------------//
-	
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define('uikit', factory) :
