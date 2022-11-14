@@ -1,15 +1,15 @@
 
 .uk-label {
-  background: var(--color-primary);
-  display: inline-block;
+  /*color: #fff;*/
   padding: 0 10px;
   line-height: 1.5;
-  font-size: 0.875rem;
-  color: #fff;
-  vertical-align: middle;
-  white-space: nowrap;
   border-radius: 2px;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  display: inline-block;
+  vertical-align: middle;
   text-transform: uppercase;
+  /*background: var(--color-primary);*/
 }
 /* Color modifiers
  ========================================================================== */

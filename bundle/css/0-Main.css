@@ -1,10 +1,6 @@
 /*done*/
 :root {
 
-  --color-black: #000;
-  --color-enphasis: #333;
-  --color-disabled: #999;
-
   --color-mute: #F5F5F5;
   --color-mute-hover: #F5F5F5;
   --color-mute-click: #dddddd;
@@ -34,13 +30,13 @@
   --color-secondary-click: #2f2e2e;
 
   --color-transparent: transparent;
-  --color-transparent-mute: #F5F5F5db;
-  --color-transparent-danger: #E91E63db;
-  --color-transparent-success: #4fb2aadb;
-  --color-transparent-primary: #536DFEdb;
-  --color-transparent-default: #ffffffdb;
-  --color-transparent-warning: #FFC107db;
-  --color-transparent-secondary: #212121db;
+  --color-transparent-mute: #F5F5F5;
+  --color-transparent-danger: #E91E63;
+  --color-transparent-success: #4fb2aa;
+  --color-transparent-primary: #536DFE;
+  --color-transparent-default: #ffffff;
+  --color-transparent-warning: #FFC107;
+  --color-transparent-secondary: #212121;
   --color-transparent-dark: rgba(0, 0, 0, 0.8);
   --color-transparent-light: rgba(255, 255, 255, 0.8);
 

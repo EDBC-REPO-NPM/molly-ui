@@ -51,8 +51,8 @@
   font-size: 1.25rem;
   position: relative;
   border-radius: 10px;
-  color: var(--color-default);
-  background: var(--color-secondary);
+  color: var(--color-secondary);
+  background: var(--color-default);
 }
 * + .uk-notification-message {
   margin-top: 10px;

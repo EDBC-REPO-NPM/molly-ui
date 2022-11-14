@@ -10,7 +10,7 @@
 /* Container
  ========================================================================== */
 
- .uk-navbar-container:not(.uk-navbar-transparent) { background: var(--color-mute); }
+ .uk-navbar-container:not(.uk-transparent) { background: var(--color-mute); }
 
 /* TODO: compiled hr color */
 /°(()=>{

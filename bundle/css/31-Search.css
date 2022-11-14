@@ -127,7 +127,7 @@
 /* Focus */
 .uk-search-default .uk-search-input:focus {
   background-color: rgba(0, 0, 0, 0);
-  border-color: #1e87f0;
+  border-color: var(--color-primary);
 }
 /*
  * Icon

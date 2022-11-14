@@ -83,6 +83,35 @@
             })();°/
         </div>
 
+        /°(function(){
+            const color = 'primary|secondary|danger|warning|success'.split('|');
+            const result = new Array();
+            for( var i in color ){
+                const id = `my${i}`;
+                result.push(`
+                    <a class="uk-button uk-${color[i]} uk-enphasis" uk-toggle="target:#${id}1"> mierdaB </a>
+                    <a class="uk-button uk-${color[i]} uk-enphasis" uk-toggle="target:#${id}2"> mierdaB </a>
+                    <div>
+                        <div id="${id}1" class="uk-modal uk-${color[i]}" uk-modal>
+                            <div class="uk-modal-dialog uk-modal-body">
+                                <h2 class="uk-modal-title">mierda agria</h2>
+                                <button class="uk-modal-close uk-button uk-${color[i]} uk-enphasis" type="button">mierda</button>
+                            </div>
+                        </div>
+                    
+                        <div id="${id}2" class="uk-offcanvas uk-${color[i]}" uk-offcanvas>
+                            <div class="uk-offcanvas-bar">
+                                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                                <h3>Title</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                        </div>            
+                    </div>
+                `);
+            }
+            return result.join('');
+        })();°/     
+
     </body>
 
 </html>

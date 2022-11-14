@@ -27,19 +27,19 @@
   right: 0;
 }
 .uk-position-bottom {
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 0;
 }
 .uk-position-left {
   top: 0;
-  bottom: 0;
   left: 0;
+  bottom: 0;
 }
 .uk-position-right {
   top: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
 }
 /*
  * Corners
@@ -53,12 +53,12 @@
   right: 0;
 }
 .uk-position-bottom-left {
-  bottom: 0;
   left: 0;
+  bottom: 0;
 }
 .uk-position-bottom-right {
-  bottom: 0;
   right: 0;
+  bottom: 0;
 }
 /*
  * Center

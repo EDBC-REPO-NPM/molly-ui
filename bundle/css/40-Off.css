@@ -7,18 +7,17 @@
   /* 1 */
   display: none;
   /* 2 */
-  position: fixed;
   top: 0;
-  bottom: 0;
   left: 0;
+  bottom: 0;
   z-index: 1000;
+  position: fixed;
 }
 /*
  * Flip modifier
  */
 .uk-offcanvas-flip .uk-offcanvas {
-  right: 0;
-  left: auto;
+  right: 0; left: auto;
 }
 /* Bar
  ========================================================================== */
@@ -37,11 +36,15 @@
   width: 270px;
   padding: 20px 20px;
   box-sizing: border-box;
-  background: var(--color-secondary-click);
+  background: var(--color-default);
   /* 3 */
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
+.uk-offcanvas-bar *{
+  color: var(--color-secondary)!important;
+}
+
 /* Phone landscape and bigger */
 @media (min-width: 640px) {
   .uk-offcanvas-bar {
@@ -89,14 +92,14 @@
  */
 .uk-offcanvas-reveal {
   /* 1 */
-  position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
+  bottom: 0;
   /* 2 */
   width: 0;
   overflow: hidden;
   /* 3 */
+  position: absolute;
   transition: width 0.3s ease-out;
 }
 .uk-offcanvas-reveal .uk-offcanvas-bar {
@@ -121,8 +124,7 @@
  * Flip modifier
  */
 .uk-offcanvas-flip .uk-offcanvas-reveal {
-  right: 0;
-  left: auto;
+  right: 0; left: auto;
 }
 /* Close
  * Adopts `uk-close`
@@ -166,12 +168,12 @@
  */
 .uk-offcanvas-overlay::before {
   /* 1 */
-  content: "";
-  position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 0;
+  content: "";
+  position: absolute;
   background: rgba(0, 0, 0, 0.1);
   /* 2 */
   opacity: 0;
@@ -230,10 +232,17 @@
 /* TODO: css compiled */
 /°(()=>{
   const data = ("mute,danger,success,default,primary,warning,secondary").split(',');
+  const col = ('1001010').split('');
   const result = new Array();
   for( var i in data ){
+    const color = col[i]==0 ? 'default' : 'secondary';  
     result.push(`
-      .uk-offcanvas.uk-${data[i]} { background: var(--color-${data[i]}-click) ; }
+      .uk-offcanvas.uk-${data[i]}>*{ 
+        background: var(--color-${data[i]}-click); 
+      }
+      .uk-offcanvas.uk-${data[i]} *{
+        color: var(--color-${color})!important;
+      }
     `);
   } return result.join('\n');
 })();°/

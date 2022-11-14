@@ -9,8 +9,8 @@
   /* 1 */
   display: none;
   /* 2 */
-  position: absolute;
   z-index: 1020;
+  position: absolute;
   --uk-position-offset: 10px;
   --uk-position-viewport-offset: 15px;
   /* 3 */

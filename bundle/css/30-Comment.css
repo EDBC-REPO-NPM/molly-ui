@@ -3,18 +3,18 @@
  ========================================================================== */
 .uk-comment-body {
   display: flow-root;
-  overflow-wrap: break-word;
   word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .uk-comment-header {
-  display: flow-root;
   margin-bottom: 20px;
+  display: flow-root;
 }
 /*
  * Remove margin from the last-child
  */
-.uk-comment-body > :last-child,
-.uk-comment-header > :last-child {
+.uk-comment-header > :last-child,
+.uk-comment-body > :last-child {
   margin-bottom: 0;
 }
 /* Title

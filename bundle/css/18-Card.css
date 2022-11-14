@@ -61,9 +61,9 @@
 .uk-card-badge {
   /* 1 */
   position: absolute;
-  top: 15px;
   right: 15px;
   z-index: 1;
+  top: 15px;
   /* 2 */
   height: 22px;
   padding: 0 10px;

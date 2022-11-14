@@ -20,38 +20,38 @@
  * Left/Right
  */
 .uk-align-left {
-  margin-top: 0;
   margin-right: 30px;
+  margin-top: 0;
   float: left;
 }
 .uk-align-right {
-  margin-top: 0;
   margin-left: 30px;
+  margin-top: 0;
   float: right;
 }
 /* Phone landscape and bigger */
 @media (min-width: 640px) {
   .uk-align-left\@s {
-    margin-top: 0;
     margin-right: 30px;
+    margin-top: 0;
     float: left;
   }
   .uk-align-right\@s {
-    margin-top: 0;
     margin-left: 30px;
+    margin-top: 0;
     float: right;
   }
 }
 /* Tablet landscape and bigger */
 @media (min-width: 960px) {
   .uk-align-left\@m {
-    margin-top: 0;
     margin-right: 30px;
+    margin-top: 0;
     float: left;
   }
   .uk-align-right\@m {
-    margin-top: 0;
     margin-left: 30px;
+    margin-top: 0;
     float: right;
   }
 }
@@ -81,13 +81,13 @@
 /* Large screen and bigger */
 @media (min-width: 1600px) {
   .uk-align-left\@xl {
-    margin-top: 0;
     margin-right: 40px;
+    margin-top: 0;
     float: left;
   }
   .uk-align-right\@xl {
-    margin-top: 0;
     margin-left: 40px;
+    margin-top: 0;
     float: right;
   }
 }

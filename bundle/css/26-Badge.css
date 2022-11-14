@@ -4,19 +4,19 @@
  * 2. Center child vertically and horizontally
  */
 .uk-badge {
-  box-sizing: border-box;
-  min-width: 18px;
   height: 18px;
   padding: 0 5px;
+  min-width: 18px;
   border-radius: 500px;
   vertical-align: middle;
+  box-sizing: border-box;
   /* 1 */
-  background: var(--color-primary);
-  color: #fff !important;
+  background: var(--color-secondary);
+  color: var(--color-default);
   font-size: 11px;
   /* 2 */
-  display: inline-flex;
   justify-content: center;
+  display: inline-flex;
   align-items: center;
   line-height: 0;
 }
@@ -47,24 +47,6 @@
       .uk-badge.uk-${data[i]}.uk-enphasis{ 
         background: var(--color-${data[i]}) !important; 
         color: var(--color-${color}) !important; 
-      }
-    `);
-  } return result.join('\n');
-})();°/
-/* TODO: css compiled */
-
-/*
-* badge color correction
-*/
-
-/* TODO: css compiled */
-/°(()=>{
-  const data = ("mute,danger,success,default,primary,warning,secondary").split(',');
-  const result = new Array();
-  for( var i in data ){
-    result.push(`
-      .uk-${data[i]} > .uk-badge.uk-enphasis{ 
-        color: var(--color-${data[i]}) !important; 
       }
     `);
   } return result.join('\n');

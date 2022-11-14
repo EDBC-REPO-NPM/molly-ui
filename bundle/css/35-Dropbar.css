@@ -14,8 +14,8 @@
   position: absolute;
   z-index: 1020;
   /* 3 */
-  box-sizing: border-box;
   padding: 25px 15px 25px 15px;
+  box-sizing: border-box;
   background: #fff;
   color: #666;
 }
