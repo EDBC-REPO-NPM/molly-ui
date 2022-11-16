@@ -337,9 +337,8 @@ hr,
   const result = new Array();
   for( var i in data ){
     result.push(`
-      .uk-${data[i]} hr,.uk-${data[i]} .uk-hr,
       hr.uk-${data[i]}, .uk-hr.uk-${data[i]} {
-        border-color: var(--color-${data[i]}-click)!important;
+        border-color: var(--color-${data[i]}-click) !important;
       }
     `);
   } return result.join('\n');
