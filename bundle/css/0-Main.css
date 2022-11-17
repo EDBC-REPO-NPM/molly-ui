@@ -1,6 +1,9 @@
 /*done*/
 :root {
 
+  --color-dark: #000;
+  --color-light: #fff;
+  
   --color-mute: #F5F5F5;
   --color-mute-hover: #F5F5F5;
   --color-mute-click: #dddddd;
