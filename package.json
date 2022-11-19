@@ -2,7 +2,7 @@
 	"license": "MIT",
 	"main": "main.js",
 	"name": "molly-ui",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"author": "becerraenmanuel",
 	"scripts": {
 		"build-molly": "./compile.sh"
