@@ -385,6 +385,9 @@
  * Useful for `overflow: auto`
  */
 
+.uk-height-max-auto { max-height: auto; }
 .uk-height-max-small { max-height: 150px; }
 .uk-height-max-large { max-height: 450px; }
 .uk-height-max-medium { max-height: 300px; }
+.uk-height-max-xlarge { max-height: 600px; }
+.uk-height-max-2xlarge { max-height: 750px; }
