@@ -2,7 +2,7 @@
 .uk-child-height-fill > :not([class*='uk-height']) { height: -webkit-fill-available !important; }
 .uk-child-height-expand > :not([class*='uk-height']) { flex: 1; min-height: 1px; }
 [class*='uk-height'] { box-sizing: border-box; max-height: 100%; height: 100vh; }
-[class*='uk-child-height'] > * { box-sizing: border-box; height: 100vh; }
+[class*='uk-child-height'] > :not([class*='uk-height']) { box-sizing: border-box; height: 100vh; }
 .uk-height-fill { height: -webkit-fill-available !important; }
 .uk-height-expand { flex: 1; min-height: 1px; }
 
@@ -15,7 +15,7 @@
     const height = +(j / i * 100).toFixed(4);
     result.push(`
       .uk-height-${j}-${i}           { height: ${height}vh; }
-      .uk-child-height-${j}-${i} > * { height: ${height}vh; }
+      .uk-child-height-${j}-${i} > :not([class*='uk-height']) { height: ${height}vh; }
     `);
   }}  return result.join('\n');
 })();°/
@@ -27,7 +27,7 @@
   for( var j in data ){
       result.push(`
        .uk-height-${data[j]}           { height: ${data[j]}; }
-       .uk-child-height-${data[j]} > * { height: ${data[j]}; }
+       .uk-child-height-${data[j]} > :not([class*='uk-height']) { height: ${data[j]}; }
       `);
   } return result.join('');
 })()
@@ -41,7 +41,7 @@
   for( var j in data ){
       result.push(`
        .uk-height-${data[j]}           { height: ${size[j]}; }
-       .uk-child-height-${data[j]} > * { height: ${size[j]}; }
+       .uk-child-height-${data[j]} > :not([class*='uk-height']) { height: ${size[j]}; }
       `);
   } return result.join('');
 })()
@@ -58,7 +58,7 @@
       const height = +(j / i * 100).toFixed(4);
       result.push(`
       .uk-height-${j}-${i}\\@s           { height: ${height}vh; }
-      .uk-child-height-${j}-${i}\\@s > * { height: ${height}vh; }
+      .uk-child-height-${j}-${i}\\@s > :not([class*='uk-height']) { height: ${height}vh; }
       `);
     }}  return result.join('\n');
   })();°/
@@ -70,7 +70,7 @@
     for( var j in data ){
         result.push(`
          .uk-height-${data[j]}\\@s           { height: ${data[j]}; }
-         .uk-child-height-${data[j]}\\@s > * { height: ${data[j]}; }
+         .uk-child-height-${data[j]}\\@s > :not([class*='uk-height']) { height: ${data[j]}; }
         `);
     } return result.join('');
   })()
@@ -84,7 +84,7 @@
     for( var j in data ){
         result.push(`
          .uk-height-${data[j]}\\@s           { height: ${size[j]}; }
-         .uk-child-height-${data[j]}\\@s > * { height: ${size[j]}; }
+         .uk-child-height-${data[j]}\\@s > :not([class*='uk-height']) { height: ${size[j]}; }
         `);
     } return result.join('');
   })()
@@ -108,7 +108,7 @@
       const height = +(j / i * 100).toFixed(4);
       result.push(`
       .uk-height-${j}-${i}\\@m           { height: ${height}vh; }
-      .uk-child-height-${j}-${i}\\@m > * { height: ${height}vh; }
+      .uk-child-height-${j}-${i}\\@m > :not([class*='uk-height']) { height: ${height}vh; }
       `);
     }}  return result.join('\n');
   })();°/
@@ -120,7 +120,7 @@
     for( var j in data ){
         result.push(`
          .uk-height-${data[j]}\\@m           { height: ${data[j]}; }
-         .uk-child-height-${data[j]}\\@m > * { height: ${data[j]}; }
+         .uk-child-height-${data[j]}\\@m > :not([class*='uk-height']) { height: ${data[j]}; }
         `);
     } return result.join('');
   })()
@@ -134,7 +134,7 @@
     for( var j in data ){
         result.push(`
          .uk-height-${data[j]}\\@m           { height: ${size[j]}; }
-         .uk-child-height-${data[j]}\\@m > * { height: ${size[j]}; }
+         .uk-child-height-${data[j]}\\@m > :not([class*='uk-height']) { height: ${size[j]}; }
         `);
     } return result.join('');
   })()
@@ -158,7 +158,7 @@
       const height = +(j / i * 100).toFixed(4);
       result.push(`
       .uk-height-${j}-${i}\\@l           { height: ${height}vh; }
-      .uk-child-height-${j}-${i}\\@l > * { height: ${height}vh; }
+      .uk-child-height-${j}-${i}\\@l > :not([class*='uk-height']) { height: ${height}vh; }
       `);
     }}  return result.join('\n');
   })();°/
@@ -170,7 +170,7 @@
     for( var j in data ){
         result.push(`
          .uk-height-${data[j]}\\@l           { height: ${data[j]}; }
-         .uk-child-height-${data[j]}\\@l > * { height: ${data[j]}; }
+         .uk-child-height-${data[j]}\\@l > :not([class*='uk-height']) { height: ${data[j]}; }
         `);
     } return result.join('');
   })()
@@ -184,7 +184,7 @@
     for( var j in data ){
         result.push(`
          .uk-height-${data[j]}\\@l           { height: ${size[j]}; }
-         .uk-child-height-${data[j]}\\@l > * { height: ${size[j]}; }
+         .uk-child-height-${data[j]}\\@l > :not([class*='uk-height']) { height: ${size[j]}; }
         `);
     } return result.join('');
   })()
@@ -208,7 +208,7 @@
       const height = +(j / i * 100).toFixed(4);
       result.push(`
       .uk-height-${j}-${i}\\@xl           { height: ${height}vh; }
-      .uk-child-height-${j}-${i}\\@xl > * { height: ${height}vh; }
+      .uk-child-height-${j}-${i}\\@xl > :not([class*='uk-height']) { height: ${height}vh; }
       `);
     }}  return result.join('\n');
   })();°/
@@ -220,7 +220,7 @@
     for( var j in data ){
         result.push(`
          .uk-height-${data[j]}\\@xl           { height: ${data[j]}; }
-         .uk-child-height-${data[j]}\\@xl > * { height: ${data[j]}; }
+         .uk-child-height-${data[j]}\\@xl > :not([class*='uk-height']) { height: ${data[j]}; }
         `);
     } return result.join('');
   })()
@@ -234,7 +234,7 @@
     for( var j in data ){
         result.push(`
          .uk-height-${data[j]}\\@xl           { height: ${size[j]}; }
-         .uk-child-height-${data[j]}\\@xl > * { height: ${size[j]}; }
+         .uk-child-height-${data[j]}\\@xl > :not([class*='uk-height']) { height: ${size[j]}; }
         `);
     } return result.join('');
   })()

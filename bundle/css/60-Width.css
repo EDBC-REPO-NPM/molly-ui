@@ -2,7 +2,7 @@
 .uk-child-width-fill > :not([class*='uk-width']) { width: -webkit-fill-available !important; }
 .uk-child-width-expand > :not([class*='uk-width']) { flex: 1; min-width: 1px; }
 [class*='uk-width'] { box-sizing: border-box; max-width: 100%; width: 100%; }
-[class*='uk-child-width'] > * { box-sizing: border-box; width: 100%; }
+[class*='uk-child-width'] > :not([class*='uk-width']) { box-sizing: border-box; width: 100%; }
 .uk-width-fill { width: -webkit-fill-available !important; }
 .uk-width-expand { flex: 1; min-width: 1px; }
 
@@ -15,7 +15,7 @@
     const width = +(j / i * 100).toFixed(4);
     result.push(`
       .uk-width-${j}-${i}           { width: ${width}%; }
-      .uk-child-width-${j}-${i} > * { width: ${width}%; }
+      .uk-child-width-${j}-${i} > :not([class*='uk-width']) { width: ${width}%; }
     `);
   }}  return result.join('\n');
 })();°/
@@ -27,7 +27,7 @@
   for( var j in data ){
       result.push(`
        .uk-width-${data[j]}           { width: ${data[j]}; }
-       .uk-child-width-${data[j]} > * { width: ${data[j]}; }
+       .uk-child-width-${data[j]} > :not([class*='uk-width']) { width: ${data[j]}; }
       `);
   } return result.join('');
 })()
@@ -41,7 +41,7 @@
   for( var j in data ){
       result.push(`
        .uk-width-${data[j]}           { width: ${size[j]}; }
-       .uk-child-width-${data[j]} > * { width: ${size[j]}; }
+       .uk-child-width-${data[j]} > :not([class*='uk-width']) { width: ${size[j]}; }
       `);
   } return result.join('');
 })()
@@ -58,7 +58,7 @@
       const width = +(j / i * 100).toFixed(4);
       result.push(`
       .uk-width-${j}-${i}\\@s           { width: ${width}%; }
-      .uk-child-width-${j}-${i}\\@s > * { width: ${width}%; }
+      .uk-child-width-${j}-${i}\\@s > :not([class*='uk-width']) { width: ${width}%; }
       `);
     }}  return result.join('\n');
   })();°/
@@ -70,7 +70,7 @@
     for( var j in data ){
         result.push(`
          .uk-width-${data[j]}\\@s           { width: ${data[j]}; }
-         .uk-child-width-${data[j]}\\@s > * { width: ${data[j]}; }
+         .uk-child-width-${data[j]}\\@s > :not([class*='uk-width']) { width: ${data[j]}; }
         `);
     } return result.join('');
   })()
@@ -84,7 +84,7 @@
     for( var j in data ){
         result.push(`
          .uk-width-${data[j]}\\@s           { width: ${size[j]}; }
-         .uk-child-width-${data[j]}\\@s > * { width: ${size[j]}; }
+         .uk-child-width-${data[j]}\\@s > :not([class*='uk-width']) { width: ${size[j]}; }
         `);
     } return result.join('');
   })()
@@ -108,7 +108,7 @@
       const width = +(j / i * 100).toFixed(4);
       result.push(`
       .uk-width-${j}-${i}\\@m           { width: ${width}%; }
-      .uk-child-width-${j}-${i}\\@m > * { width: ${width}%; }
+      .uk-child-width-${j}-${i}\\@m > :not([class*='uk-width']) { width: ${width}%; }
       `);
     }}  return result.join('\n');
   })();°/
@@ -120,7 +120,7 @@
     for( var j in data ){
         result.push(`
          .uk-width-${data[j]}\\@m           { width: ${data[j]}; }
-         .uk-child-width-${data[j]}\\@m > * { width: ${data[j]}; }
+         .uk-child-width-${data[j]}\\@m > :not([class*='uk-width']) { width: ${data[j]}; }
         `);
     } return result.join('');
   })()
@@ -134,7 +134,7 @@
     for( var j in data ){
         result.push(`
          .uk-width-${data[j]}\\@m           { width: ${size[j]}; }
-         .uk-child-width-${data[j]}\\@m > * { width: ${size[j]}; }
+         .uk-child-width-${data[j]}\\@m > :not([class*='uk-width']) { width: ${size[j]}; }
         `);
     } return result.join('');
   })()
@@ -158,7 +158,7 @@
       const width = +(j / i * 100).toFixed(4);
       result.push(`
       .uk-width-${j}-${i}\\@l           { width: ${width}%; }
-      .uk-child-width-${j}-${i}\\@l > * { width: ${width}%; }
+      .uk-child-width-${j}-${i}\\@l > :not([class*='uk-width']) { width: ${width}%; }
       `);
     }}  return result.join('\n');
   })();°/
@@ -170,7 +170,7 @@
     for( var j in data ){
         result.push(`
          .uk-width-${data[j]}\\@l           { width: ${data[j]}; }
-         .uk-child-width-${data[j]}\\@l > * { width: ${data[j]}; }
+         .uk-child-width-${data[j]}\\@l > :not([class*='uk-width']) { width: ${data[j]}; }
         `);
     } return result.join('');
   })()
@@ -184,7 +184,7 @@
     for( var j in data ){
         result.push(`
          .uk-width-${data[j]}\\@l           { width: ${size[j]}; }
-         .uk-child-width-${data[j]}\\@l > * { width: ${size[j]}; }
+         .uk-child-width-${data[j]}\\@l > :not([class*='uk-width']) { width: ${size[j]}; }
         `);
     } return result.join('');
   })()
@@ -208,7 +208,7 @@
       const width = +(j / i * 100).toFixed(4);
       result.push(`
       .uk-width-${j}-${i}\\@xl           { width: ${width}%; }
-      .uk-child-width-${j}-${i}\\@xl > * { width: ${width}%; }
+      .uk-child-width-${j}-${i}\\@xl > :not([class*='uk-width']) { width: ${width}%; }
       `);
     }}  return result.join('\n');
   })();°/
@@ -220,7 +220,7 @@
     for( var j in data ){
         result.push(`
          .uk-width-${data[j]}\\@xl           { width: ${data[j]}; }
-         .uk-child-width-${data[j]}\\@xl > * { width: ${data[j]}; }
+         .uk-child-width-${data[j]}\\@xl > :not([class*='uk-width']) { width: ${data[j]}; }
         `);
     } return result.join('');
   })()
@@ -234,7 +234,7 @@
     for( var j in data ){
         result.push(`
          .uk-width-${data[j]}\\@xl           { width: ${size[j]}; }
-         .uk-child-width-${data[j]}\\@xl > * { width: ${size[j]}; }
+         .uk-child-width-${data[j]}\\@xl > :not([class*='uk-width']) { width: ${size[j]}; }
         `);
     } return result.join('');
   })()

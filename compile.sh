@@ -1,13 +1,19 @@
 #!/bin/bash
 
-echo 'building mollyUI.js'
+echo 'building bundle.js (UIkit)'
 
 browserify -t [ babelify --presets [@babel/preset-env] ] ./bundle/js/1-main.js > ./bundle/minify.js
 minify ./bundle/minify.js > ./bundle/bundle.js
-rm -R ./bundle/minify.js
 
-echo 'building mollyUI.css'
+echo 'building bundle.css (UIkit)'
 
-node ./compiler/cssBundle.js > ./bundle/minify.css
+for i in `ls ./bundle/css | grep -e '.css$'`; do
+    cat ./bundle/css/$i >> ./bundle/concat.css
+done
+
+glunt ./bundle/concat.css > ./bundle/minify.css
 minify ./bundle/minify.css > ./bundle/bundle.css
-rm -R ./bundle/minify.css
+
+echo 'removing trash files'
+
+rm -R ./bundle/minify.js ./bundle/minify.css ./bundle/concat.css 
