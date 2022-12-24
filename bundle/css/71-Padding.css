@@ -1,49 +1,162 @@
+/*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
 
-.uk-padding { padding: 30px; }
-.uk-child-padding>*{ padding: 30px; }
+/°
+(()=>{
+  const data = '|-small|-medium|-large|-xlarge|-2xlarge'.split('|');
+  const size = '15px|10px|20px|25px|50px|80px'.split('|');
+  const result = new Array();
+  for( var i in data ){
+    result.push(`
+      .uk-padding${data[i]} { padding: ${size[i]}; }
+      .uk-child-padding${data[i]} > :not([class*='uk-padding']){ padding: ${size[i]}; }
+    `);
+  } return result.join('');
+})()
+°/
 
-/* Desktop and bigger */
-@media (min-width: 1200px) {
-  .uk-padding { padding: 40px; }
-  .uk-child-padding>*{ padding: 40px; }
-}
-/* Small
- ========================================================================== */
-.uk-padding-small { padding: 15px; }
-.uk-child-padding-small>*{ padding: 15px; }
-
-/* Large
- ========================================================================== */
-.uk-padding-large { padding: 40px; }
-.uk-child-padding-large>*{ padding: 40px; }
-
-/* Desktop and bigger */
-@media (min-width: 1200px) {
-  .uk-padding-large { padding: 40px; }
-  .uk-child-padding-large>*{ padding: 40px; }
-}
-/* Remove
- ========================================================================== */
-/* compiled */
-/°(()=>{
-  var pos = (',-top,-bottom,-left,-right').split(',');
-  var resp = new String();
+/°
+(()=>{
+  var pos = ('|-top|-bottom|-left|-right').split('|');
+  var result = new Array();
   for( var i in pos ){
-    resp += `
-      .uk-padding-remove${pos[i]} {
-        padding${pos[i]}: 0 !important;
-      }
-    `;
-  } return resp;
-})();°/
-/* compiled */
+    result.push(`.uk-padding-remove${pos[i]} { padding${pos[i]}: 0 !important; }`);
+  } return result.join('');
+})()
+°/
 
-.uk-padding-remove-vertical {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+.uk-padding-remove-vertical { padding-top: 0 !important; padding-bottom: 0 !important; }
+.uk-padding-remove-horizontal { padding-left: 0 !important; padding-right: 0 !important; }
+
+/*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
+
+@media (min-width: 640px) {
+
+  /°
+  (()=>{
+    const data = '|-small|-medium|-large|-xlarge|-2xlarge'.split('|');
+    const size = '15px|10px|20px|25px|50px|80px'.split('|');
+    const result = new Array();
+    for( var i in data ){
+      result.push(`
+        .uk-padding${data[i]}\\@s { padding: ${size[i]}; }
+        .uk-child-padding${data[i]}\\@s > :not([class*='uk-padding']){ padding: ${size[i]}; }
+      `);
+    } return result.join('');
+  })()
+  °/
+
+  /°
+  (()=>{
+    var pos = ('|-top|-bottom|-left|-right').split('|');
+    var result = new Array();
+    for( var i in pos ){
+      result.push(`.uk-padding-remove${pos[i]}\\@s { padding${pos[i]}: 0 !important; }`);
+    } return result.join('');
+  })()
+  °/
+
+  .uk-padding-remove-vertical\@s { padding-top: 0 !important; padding-bottom: 0 !important; }
+  .uk-padding-remove-horizontal\@s { padding-left: 0 !important; padding-right: 0 !important; }
+
 }
 
-.uk-padding-remove-horizontal {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+/*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
+
+@media (min-width: 960px) {
+
+  /°
+  (()=>{
+    const data = '|-small|-medium|-large|-xlarge|-2xlarge'.split('|');
+    const size = '15px|10px|20px|25px|50px|80px'.split('|');
+    const result = new Array();
+    for( var i in data ){
+      result.push(`
+        .uk-padding${data[i]}\\@m { padding: ${size[i]}; }
+        .uk-child-padding${data[i]}\\@m > :not([class*='uk-padding']){ padding: ${size[i]}; }
+      `);
+    } return result.join('');
+  })()
+  °/
+
+  /°
+  (()=>{
+    var pos = ('|-top|-bottom|-left|-right').split('|');
+    var result = new Array();
+    for( var i in pos ){
+      result.push(`.uk-padding-remove${pos[i]}\\@m { padding${pos[i]}: 0 !important; }`);
+    } return result.join('');
+  })()
+  °/
+
+  .uk-padding-remove-vertical\@m { padding-top: 0 !important; padding-bottom: 0 !important; }
+  .uk-padding-remove-horizontal\@m { padding-left: 0 !important; padding-right: 0 !important; }
+
 }
+
+/*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
+
+@media (min-width: 1200px) {
+
+  /°
+  (()=>{
+    const data = '|-small|-medium|-large|-xlarge|-2xlarge'.split('|');
+    const size = '15px|10px|20px|25px|50px|80px'.split('|');
+    const result = new Array();
+    for( var i in data ){
+      result.push(`
+        .uk-padding${data[i]}\\@l { padding: ${size[i]}; }
+        .uk-child-padding${data[i]}\\@l > :not([class*='uk-padding']){ padding: ${size[i]}; }
+      `);
+    } return result.join('');
+  })()
+  °/
+
+  /°
+  (()=>{
+    var pos = ('|-top|-bottom|-left|-right').split('|');
+    var result = new Array();
+    for( var i in pos ){
+      result.push(`.uk-padding-remove${pos[i]}\\@l { padding${pos[i]}: 0 !important; }`);
+    } return result.join('');
+  })()
+  °/
+
+  .uk-padding-remove-vertical\@l { padding-top: 0 !important; padding-bottom: 0 !important; }
+  .uk-padding-remove-horizontal\@l { padding-left: 0 !important; padding-right: 0 !important; }
+
+}
+
+/*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
+
+@media (min-width: 1600px) {
+
+  /°
+  (()=>{
+    const data = '|-small|-medium|-large|-xlarge|-2xlarge'.split('|');
+    const size = '15px|10px|20px|25px|50px|80px'.split('|');
+    const result = new Array();
+    for( var i in data ){
+      result.push(`
+        .uk-padding${data[i]}\\@xl { padding: ${size[i]}; }
+        .uk-child-padding${data[i]}\\@xl > :not([class*='uk-padding']){ padding: ${size[i]}; }
+      `);
+    } return result.join('');
+  })()
+  °/
+
+  /°
+  (()=>{
+    var pos = ('|-top|-bottom|-left|-right').split('|');
+    var result = new Array();
+    for( var i in pos ){
+      result.push(`.uk-padding-remove${pos[i]}\\@xl { padding${pos[i]}: 0 !important; }`);
+    } return result.join('');
+  })()
+  °/
+
+  .uk-padding-remove-vertical\@xl { padding-top: 0 !important; padding-bottom: 0 !important; }
+  .uk-padding-remove-horizontal\@xl { padding-left: 0 !important; padding-right: 0 !important; }
+
+}
+
+/*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/

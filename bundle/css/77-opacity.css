@@ -1,0 +1,10 @@
+/°
+(()=>{
+    const result = new Array();
+    for( var i=12; i>=1; i-- ){ for( var j=i; j>=1; j-- ){
+        if( i == j && i!=1 && j!=1 ) continue;
+        const width = +(j/i*100).toFixed(4);
+        result.push(`.uk-opacity-${j}-${i} { opacity: ${width}%; }`);
+    }}  return result.join('');
+})()
+°/

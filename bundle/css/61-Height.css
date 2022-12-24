@@ -1,393 +1,248 @@
 
-/* Original Code
- ========================================================================== */
+.uk-child-height-fill > :not([class*='uk-height']) { height: -webkit-fill-available !important; }
+.uk-child-height-expand > :not([class*='uk-height']) { flex: 1; min-height: 1px; }
+[class*='uk-height'] { box-sizing: border-box; max-height: 100%; height: 100vh; }
+[class*='uk-child-height'] > :not([class*='uk-height']) { box-sizing: border-box; height: 100vh; }
+.uk-height-fill { height: -webkit-fill-available !important; }
+.uk-height-expand { flex: 1; min-height: 1px; }
 
-[class*='uk-height'] { box-sizing: border-box; }
-
-/*
- * Only works if parent element has a height set
- */
-
- /°(()=>{
-  const result = new Array();
-  for( var i=12; i>=1; i-- ){
-    for( var j=i; j>=1; j-- ){
-      if( i == j && i!=1 && j!=1 ) continue;
-      const height = +(j / i * 100).toFixed(4);
-      result.push(`
-        .uk-child-height-${j}-${i} > * {
-          height: ${height}vh;
-        }
-      `);
-    }
-  }
-  return result.join('\n');
-})();°/
-
-.uk-child-height-auto > * {
-  height: auto;
-}
-
-/*
- * 1. Reset the `min-height`, which is set to auto by default, because
- *    flex items won't shrink below their minimum intrinsic content size.
- *    Using `1px` instead of `0`, so items still wrap into the next line,
- *    if they have zero height and padding and the predecessor is 100vh wide.
- */
-.uk-child-height-expand > :not([class*='uk-height']) {
-  flex: 1;
-  /* 1 */
-  min-height: 1px;
-}
-
-/* Pixel */
-.uk-height-small {
-  height: 150px;
-}
-.uk-height-medium {
-  height: 300px;
-}
-.uk-height-large {
-  height: 450px;
-}
-.uk-height-xlarge {
-  height: 600px;
-}
-.uk-height-2xlarge {
-  height: 750px;
-}
-/* Auto */
-.uk-height-auto {
-  height: auto;
-}
-/* Expand */
-.uk-height-expand {
-  min-height: 100vh; 
-}
-
-/* Phone landscape and bigger */
-@media (min-width: 640px) {
-
-  /°(()=>{
-    const result = new Array();
-    for( var i=12; i>=1; i-- ){
-      for( var j=i; j>=1; j-- ){
-        if( i == j && i!=1 && j!=1 ) continue;
-        const height = +(j / i * 100).toFixed(4);
-        result.push(`
-          .uk-child-height-${j}-${i}\\@s > * {
-            height: ${height}vh;
-          }
-        `);
-      }
-    }
-    return result.join('\n');
-  })();°/
-
-  .uk-child-height-auto\@s > * {
-    height: auto;
-  }
-  .uk-child-height-expand\@s > :not([class*='uk-height']) {
-    min-height: 100vh; 
-  }
-}
-
-/* Tablet landscape and bigger */
-@media (min-width: 960px) {
-
-  /°(()=>{
-    const result = new Array();
-    for( var i=12; i>=1; i-- ){
-      for( var j=i; j>=1; j-- ){
-        if( i == j && i!=1 && j!=1 && i!=1 && j!=1 ) continue;
-        const height = +(j / i * 100).toFixed(4);
-        result.push(`
-          .uk-child-height-${j}-${i}\\@m > * {
-            height: ${height}vh;
-          }
-        `);
-      }
-    }
-    return result.join('\n');
-  })();°/
-
-  .uk-child-height-auto\@m > * {
-    height: auto;
-  }
-  .uk-child-height-expand\@m > :not([class*='uk-height']) {
-    min-height: 100vh; 
-  }
-}
-
-/* Desktop and bigger */
-@media (min-width: 1200px) {
-
-  /°(()=>{
-    const result = new Array();
-    for( var i=12; i>=1; i-- ){
-      for( var j=i; j>=1; j-- ){
-        if( i == j && i!=1 && j!=1 ) continue;
-        const height = +(j / i * 100).toFixed(4);
-        result.push(`
-          .uk-child-height-${j}-${i}\\@l > * {
-            height: ${height}vh;
-          }
-        `);
-      }
-    }
-    return result.join('\n');
-  })();°/
-  
-  .uk-child-height-auto\@l > * {
-    height: auto;
-  }
-  .uk-child-height-expand\@l > :not([class*='uk-height']) {
-    min-height: 100vh; 
-  }
-}
-
-/* Large screen and bigger */
-@media (min-width: 1600px) {
-
-  /°(()=>{
-    const result = new Array();
-    for( var i=12; i>=1; i-- ){
-      for( var j=i; j>=1; j-- ){
-        if( i == j && i!=1 && j!=1 ) continue;
-        const height = +(j / i * 100).toFixed(4);
-        result.push(`
-          .uk-child-height-${j}-${i}\\@xl > * {
-            height: ${height}vh;
-          }
-        `);
-      }
-    }
-    return result.join('\n');
-  })();°/
-
-  .uk-child-height-auto\@xl > * {
-    height: auto;
-  }
-  .uk-child-height-expand\@xl > :not([class*='uk-height']) {
-    min-height: 100vh; 
-  }
-}
-
-/* Single heights
- ========================================================================== */
-/*
- * 1. `max-height` is needed for the pixel-based classes
- */
-[class*='uk-height'] {
-  box-sizing: border-box;
-  /*max-height: 100vh;*/
-  /*height: 100vh;*/
-  /* 1 */
-}
+/*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
 
 /°(()=>{
   const result = new Array();
-  for( var i=12; i>=1; i-- ){
-    for( var j=i; j>=1; j-- ){
-      if( i == j && i!=1 && j!=1 ) continue;
-      const height = +(j / i * 100).toFixed(4);
-      result.push(`
-        .uk-height-${j}-${i} {
-          height: ${height}vh;
-        }
-      `);
-    }
-  }
-  return result.join('\n');
+  for( var i=12; i>=1; i-- ){ for( var j=i; j>=1; j-- ){
+    if( i == j && i!=1 && j!=1 ) continue;
+    const height = +(j / i * 100).toFixed(4);
+    result.push(`
+      .uk-height-${j}-${i}           { height: ${height}vh; }
+      .uk-child-height-${j}-${i} > :not([class*='uk-height']) { height: ${height}vh; }
+    `);
+  }}  return result.join('\n');
 })();°/
 
-/* Phone landscape and bigger */
+/°
+(()=>{
+  const data = 'inhertial|initial|auto|fit-content|max-content|min-content|none|revert|unset'.split('|');
+  const result = new Array();
+  for( var j in data ){
+      result.push(`
+       .uk-height-${data[j]}           { height: ${data[j]}; }
+       .uk-child-height-${data[j]} > :not([class*='uk-height']) { height: ${data[j]}; }
+      `);
+  } return result.join('');
+})()
+°/
+
+/°
+(()=>{
+  const data = 'small|medium|large|xlarge|2xlarge'.split('|');
+  const size = '150px|300px|450px|600px|750px'.split('|');
+  const result = new Array();
+  for( var j in data ){
+      result.push(`
+       .uk-height-${data[j]}           { height: ${size[j]}; }
+       .uk-child-height-${data[j]} > :not([class*='uk-height']) { height: ${size[j]}; }
+      `);
+  } return result.join('');
+})()
+°/
+
+/*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
+
 @media (min-width: 640px) {
 
   /°(()=>{
     const result = new Array();
-    for( var i=12; i>=1; i-- ){
-      for( var j=i; j>=1; j-- ){
-        if( i == j && i!=1 && j!=1 ) continue;
-        const height = +(j / i * 100).toFixed(4);
-        result.push(`
-          .uk-height-${j}-${i}\\@s {
-            height: ${height}vh;
-          }
-        `);
-      }
-    }
-    return result.join('\n');
+    for( var i=12; i>=1; i-- ){ for( var j=i; j>=1; j-- ){
+      if( i == j && i!=1 && j!=1 ) continue;
+      const height = +(j / i * 100).toFixed(4);
+      result.push(`
+      .uk-height-${j}-${i}\\@s           { height: ${height}vh; }
+      .uk-child-height-${j}-${i}\\@s > :not([class*='uk-height']) { height: ${height}vh; }
+      `);
+    }}  return result.join('\n');
   })();°/
+  
+  /°
+  (()=>{
+    const data = 'inhertial|initial|auto|fit-content|max-content|min-content|none|revert|unset'.split('|');
+    const result = new Array();
+    for( var j in data ){
+        result.push(`
+         .uk-height-${data[j]}\\@s           { height: ${data[j]}; }
+         .uk-child-height-${data[j]}\\@s > :not([class*='uk-height']) { height: ${data[j]}; }
+        `);
+    } return result.join('');
+  })()
+  °/
+  
+  /°
+  (()=>{
+    const data = 'small|medium|large|xlarge|2xlarge'.split('|');
+    const size = '150px|300px|450px|600px|750px'.split('|');
+    const result = new Array();
+    for( var j in data ){
+        result.push(`
+         .uk-height-${data[j]}\\@s           { height: ${size[j]}; }
+         .uk-child-height-${data[j]}\\@s > :not([class*='uk-height']) { height: ${size[j]}; }
+        `);
+    } return result.join('');
+  })()
+  °/
 
-  /* Pixel */
-  .uk-height-small\@s {
-    height: 150px;
-  }
-  .uk-height-medium\@s {
-    height: 300px;
-  }
-  .uk-height-large\@s {
-    height: 450px;
-  }
-  .uk-height-xlarge\@s {
-    height: 600px;
-  }
-  .uk-height-2xlarge\@s {
-    height: 750px;
-  }
-  /* Auto */
-  .uk-height-auto\@s {
-    height: auto;
-  }
-  /* Expand */
-  .uk-height-expand\@s { min-height: 100vh; }
+  .uk-height-fill\@s { height: -webkit-fill-available !important; }
+  .uk-height-expand\@s { flex: 1; min-height: 1px; min-height: 100vh; }
+  .uk-child-height-fill\@s > :not([class*='uk-height']) { height: -webkit-fill-available !important; }
+  .uk-child-height-expand\@s > :not([class*='uk-height']) { flex: 1; min-height: 1px; min-height: 100vh; }
+
 }
 
-/* Tablet landscape and bigger */
+/*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
+
 @media (min-width: 960px) {
-  
+
   /°(()=>{
     const result = new Array();
-    for( var i=12; i>=1; i-- ){
-      for( var j=i; j>=1; j-- ){
-        if( i == j && i!=1 && j!=1 ) continue;
-        const height = +(j / i * 100).toFixed(4);
-        result.push(`
-          .uk-height-${j}-${i}\\@m {
-            height: ${height}vh;
-          }
-        `);
-      }
-    }
-    return result.join('\n');
+    for( var i=12; i>=1; i-- ){ for( var j=i; j>=1; j-- ){
+      if( i == j && i!=1 && j!=1 ) continue;
+      const height = +(j / i * 100).toFixed(4);
+      result.push(`
+      .uk-height-${j}-${i}\\@m           { height: ${height}vh; }
+      .uk-child-height-${j}-${i}\\@m > :not([class*='uk-height']) { height: ${height}vh; }
+      `);
+    }}  return result.join('\n');
   })();°/
+  
+  /°
+  (()=>{
+    const data = 'inhertial|initial|auto|fit-content|max-content|min-content|none|revert|unset'.split('|');
+    const result = new Array();
+    for( var j in data ){
+        result.push(`
+         .uk-height-${data[j]}\\@m           { height: ${data[j]}; }
+         .uk-child-height-${data[j]}\\@m > :not([class*='uk-height']) { height: ${data[j]}; }
+        `);
+    } return result.join('');
+  })()
+  °/
+  
+  /°
+  (()=>{
+    const data = 'small|medium|large|xlarge|2xlarge'.split('|');
+    const size = '150px|300px|450px|600px|750px'.split('|');
+    const result = new Array();
+    for( var j in data ){
+        result.push(`
+         .uk-height-${data[j]}\\@m           { height: ${size[j]}; }
+         .uk-child-height-${data[j]}\\@m > :not([class*='uk-height']) { height: ${size[j]}; }
+        `);
+    } return result.join('');
+  })()
+  °/
 
-  /* Pixel */
-  .uk-height-small\@m {
-    height: 150px;
-  }
-  .uk-height-medium\@m {
-    height: 300px;
-  }
-  .uk-height-large\@m {
-    height: 450px;
-  }
-  .uk-height-xlarge\@m {
-    height: 600px;
-  }
-  .uk-height-2xlarge\@m {
-    height: 750px;
-  }
-  /* Auto */
-  .uk-height-auto\@m {
-    height: auto;
-  }
-  /* Expand */
-  .uk-height-expand\@m { min-height: 100vh; }
+  .uk-height-fill\@m { height: -webkit-fill-available !important; }
+  .uk-height-expand\@m { flex: 1; min-height: 1px; min-height: 100vh; }
+  .uk-child-height-fill\@m > :not([class*='uk-height']) { height: -webkit-fill-available !important; }
+  .uk-child-height-expand\@m > :not([class*='uk-height']) { flex: 1; min-height: 1px; min-height: 100vh; }
+
 }
 
-/* Desktop and bigger */
+/*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
+
 @media (min-width: 1200px) {
-  
+
   /°(()=>{
     const result = new Array();
-    for( var i=12; i>=1; i-- ){
-      for( var j=i; j>=1; j-- ){
-        if( i == j && i!=1 && j!=1 ) continue;
-        const height = +(j / i * 100).toFixed(4);
-        result.push(`
-          .uk-height-${j}-${i}\\@l {
-            height: ${height}vh;
-          }
-        `);
-      }
-    }
-    return result.join('\n');
+    for( var i=12; i>=1; i-- ){ for( var j=i; j>=1; j-- ){
+      if( i == j && i!=1 && j!=1 ) continue;
+      const height = +(j / i * 100).toFixed(4);
+      result.push(`
+      .uk-height-${j}-${i}\\@l           { height: ${height}vh; }
+      .uk-child-height-${j}-${i}\\@l > :not([class*='uk-height']) { height: ${height}vh; }
+      `);
+    }}  return result.join('\n');
   })();°/
+  
+  /°
+  (()=>{
+    const data = 'inhertial|initial|auto|fit-content|max-content|min-content|none|revert|unset'.split('|');
+    const result = new Array();
+    for( var j in data ){
+        result.push(`
+         .uk-height-${data[j]}\\@l           { height: ${data[j]}; }
+         .uk-child-height-${data[j]}\\@l > :not([class*='uk-height']) { height: ${data[j]}; }
+        `);
+    } return result.join('');
+  })()
+  °/
+  
+  /°
+  (()=>{
+    const data = 'small|medium|large|xlarge|2xlarge'.split('|');
+    const size = '150px|300px|450px|600px|750px'.split('|');
+    const result = new Array();
+    for( var j in data ){
+        result.push(`
+         .uk-height-${data[j]}\\@l           { height: ${size[j]}; }
+         .uk-child-height-${data[j]}\\@l > :not([class*='uk-height']) { height: ${size[j]}; }
+        `);
+    } return result.join('');
+  })()
+  °/
 
-  /* Pixel */
-  .uk-height-small\@l {
-    height: 150px;
-  }
-  .uk-height-medium\@l {
-    height: 300px;
-  }
-  .uk-height-large\@l {
-    height: 450px;
-  }
-  .uk-height-xlarge\@l {
-    height: 600px;
-  }
-  .uk-height-2xlarge\@l {
-    height: 750px;
-  }
-  /* Auto */
-  .uk-height-auto\@l {
-    height: auto;
-  }
-  /* Expand */
-  .uk-height-expand\@l { min-height: 100vh; }
+  .uk-height-fill\@l { height: -webkit-fill-available !important; }
+  .uk-height-expand\@l { flex: 1; min-height: 1px; min-height: 100vh; }
+  .uk-child-height-fill\@l > :not([class*='uk-height']) { height: -webkit-fill-available !important; }
+  .uk-child-height-expand\@l > :not([class*='uk-height']) { flex: 1; min-height: 1px; min-height: 100vh; }
+
 }
 
-/* Large screen and bigger */
+/*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
+
 @media (min-width: 1600px) {
-  
+
   /°(()=>{
     const result = new Array();
-    for( var i=12; i>=1; i-- ){
-      for( var j=i; j>=1; j-- ){
-        if( i == j && i!=1 && j!=1 ) continue;
-        const height = +(j / i * 100).toFixed(4);
-        result.push(`
-          .uk-height-${j}-${i}\\@xl {
-            height: ${height}vh;
-          }
-        `);
-      }
-    }
-    return result.join('\n');
+    for( var i=12; i>=1; i-- ){ for( var j=i; j>=1; j-- ){
+      if( i == j && i!=1 && j!=1 ) continue;
+      const height = +(j / i * 100).toFixed(4);
+      result.push(`
+      .uk-height-${j}-${i}\\@xl           { height: ${height}vh; }
+      .uk-child-height-${j}-${i}\\@xl > :not([class*='uk-height']) { height: ${height}vh; }
+      `);
+    }}  return result.join('\n');
   })();°/
+  
+  /°
+  (()=>{
+    const data = 'inhertial|initial|auto|fit-content|max-content|min-content|none|revert|unset'.split('|');
+    const result = new Array();
+    for( var j in data ){
+        result.push(`
+         .uk-height-${data[j]}\\@xl           { height: ${data[j]}; }
+         .uk-child-height-${data[j]}\\@xl > :not([class*='uk-height']) { height: ${data[j]}; }
+        `);
+    } return result.join('');
+  })()
+  °/
+  
+  /°
+  (()=>{
+    const data = 'small|medium|large|xlarge|2xlarge'.split('|');
+    const size = '150px|300px|450px|600px|750px'.split('|');
+    const result = new Array();
+    for( var j in data ){
+        result.push(`
+         .uk-height-${data[j]}\\@xl           { height: ${size[j]}; }
+         .uk-child-height-${data[j]}\\@xl > :not([class*='uk-height']) { height: ${size[j]}; }
+        `);
+    } return result.join('');
+  })()
+  °/
 
-  /* Pixel */
-  .uk-height-small\@xl {
-    height: 150px;
-  }
-  .uk-height-medium\@xl {
-    height: 300px;
-  }
-  .uk-height-large\@xl {
-    height: 450px;
-  }
-  .uk-height-xlarge\@xl {
-    height: 600px;
-  }
-  .uk-height-2xlarge\@xl {
-    height: 750px;
-  }
-  /* Auto */
-  .uk-height-auto\@xl {
-    height: auto;
-  }
-  /* Expand */
-  .uk-height-expand\@xl { min-height: 100vh; }
+  .uk-height-fill\@xl { height: -webkit-fill-available !important; }
+  .uk-height-expand\@xl { flex: 1; min-height: 1px; min-height: 100vh; }
+  .uk-child-height-fill\@xl > :not([class*='uk-height']) { height: -webkit-fill-available !important; }
+  .uk-child-height-expand\@xl > :not([class*='uk-height']) { flex: 1; min-height: 1px; min-height: 100vh; }
+
 }
-
-/* Original Code - Important
- ========================================================================== */
-.uk-height-expand { min-height: 100vh; }
-.uk-height-expand-2 { min-height: 200vh; }
-.uk-height-expand-3 { min-height: 300vh; }
-.uk-height-expand-4 { min-height: 400vh; }
-
-/*
- * Pixel
- * Useful for `overflow: auto`
- */
-
-.uk-height-max-auto { max-height: auto; }
-.uk-height-max-small { max-height: 150px; }
-.uk-height-max-large { max-height: 450px; }
-.uk-height-max-medium { max-height: 300px; }
-.uk-height-max-xlarge { max-height: 600px; }
-.uk-height-max-2xlarge { max-height: 750px; }
