@@ -8,7 +8,7 @@
   for( var i in data ){
     result.push(`
       .uk-padding${data[i]} { padding: ${size[i]}; }
-      .uk-child-padding${data[i]}>*{ padding: ${size[i]}; }
+      .uk-child-padding${data[i]} > :not([class*='uk-padding']){ padding: ${size[i]}; }
     `);
   } return result.join('');
 })()
@@ -39,7 +39,7 @@
     for( var i in data ){
       result.push(`
         .uk-padding${data[i]}\\@s { padding: ${size[i]}; }
-        .uk-child-padding${data[i]}\\@s>*{ padding: ${size[i]}; }
+        .uk-child-padding${data[i]}\\@s > :not([class*='uk-padding']){ padding: ${size[i]}; }
       `);
     } return result.join('');
   })()
@@ -72,7 +72,7 @@
     for( var i in data ){
       result.push(`
         .uk-padding${data[i]}\\@m { padding: ${size[i]}; }
-        .uk-child-padding${data[i]}\\@m>*{ padding: ${size[i]}; }
+        .uk-child-padding${data[i]}\\@m > :not([class*='uk-padding']){ padding: ${size[i]}; }
       `);
     } return result.join('');
   })()
@@ -105,7 +105,7 @@
     for( var i in data ){
       result.push(`
         .uk-padding${data[i]}\\@l { padding: ${size[i]}; }
-        .uk-child-padding${data[i]}\\@l>*{ padding: ${size[i]}; }
+        .uk-child-padding${data[i]}\\@l > :not([class*='uk-padding']){ padding: ${size[i]}; }
       `);
     } return result.join('');
   })()
@@ -138,7 +138,7 @@
     for( var i in data ){
       result.push(`
         .uk-padding${data[i]}\\@xl { padding: ${size[i]}; }
-        .uk-child-padding${data[i]}\\@xl>*{ padding: ${size[i]}; }
+        .uk-child-padding${data[i]}\\@xl > :not([class*='uk-padding']){ padding: ${size[i]}; }
       `);
     } return result.join('');
   })()

@@ -75,7 +75,7 @@
   const result = new Array();
   for( var i in data ){
     result.push(`
-      .uk-section-${data[i]} { background: var(--color-${data[i]}); }
+      .uk-section.uk-${data[i]} { background: var(--color-${data[i]}); }
     `);
   } return result.join('\n');
 })();°/

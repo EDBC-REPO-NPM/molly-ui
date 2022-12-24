@@ -3,8 +3,7 @@
  * Hidden
  * `hidden` attribute also set here to make it stronger
  */
-[hidden],
-.uk-hidden {
+[hidden],.uk-hidden {
   display: none !important;
 }
 /* Phone landscape and bigger */

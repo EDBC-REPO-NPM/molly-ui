@@ -11,7 +11,23 @@
 
 /°
 (()=>{
-    const data = 'top|bottom|left|right'.split('|');
+    const data = 'top|bottom'.split('|');
+    return data.map(x=>{
+        return `
+            .uk-rounded-remove-${x} {
+                border-${x}-left-radius: initial !important;
+                border-${x}-right-radius: initial !important;
+            }
+        `;
+    }).join('');
+})()
+°/
+
+/*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
+
+/°
+(()=>{
+    const data = 'left|right'.split('|');
     return data.map(x=>{
         return `
             .uk-rounded-remove-${x} {

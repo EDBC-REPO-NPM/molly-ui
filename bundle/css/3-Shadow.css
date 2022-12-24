@@ -1,14 +1,20 @@
 /*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
 
-.uk-shadow { box-shadow: 0 5px 15px var( --color-dark ) !important; }
+.uk-shadow { box-shadow: 0 5px 8px var( --color-dark ) !important; }
 .uk-shadow-small { box-shadow: 0 2px 8px var( --color-dark ) !important; }
-.uk-shadow-large { box-shadow: 0 14px 25px var( --color-dark ) !important; }
+.uk-shadow-large { box-shadow: 0 15px 8px var( --color-dark ) !important; }
+.uk-shadow-medium { box-shadow: 0 10px 8px var( --color-dark ) !important; }
+.uk-shadow-xlarge { box-shadow: 0 20px 8px var( --color-dark ) !important; }
+.uk-shadow-2xlarge { box-shadow: 0 40px 8px var( --color-dark ) !important; }
 
 /*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
 
-.uk-shadow-light { box-shadow: 0 5px 15px var( --color-light ) !important; }
+.uk-shadow-light { box-shadow: 0 5px 8px var( --color-light ) !important; }
 .uk-shadow-light-small { box-shadow: 0 2px 8px var( --color-light ) !important; }
-.uk-shadow-light-large { box-shadow: 0 14px 25px var( --color-light ) !important; }
+.uk-shadow-light-large { box-shadow: 0 15px 8px var( --color-light ) !important; }
+.uk-shadow-light-medium { box-shadow: 0 10px 8px var( --color-light ) !important; }
+.uk-shadow-light-xlarge { box-shadow: 0 20px 8px var( --color-light ) !important; }
+.uk-shadow-light-2xlarge { box-shadow: 0 40px 8px var( --color-light ) !important; }
 
 /*───────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
 
@@ -18,9 +24,12 @@
    
     for( var i in types ){
         result.push(`
-            .uk-shadow-${types[i]} { box-shadow: 0 5px 15px var( --color-${types[i]} ) !important; }
+            .uk-shadow-${types[i]} { box-shadow: 0 5px 8px var( --color-${types[i]} ) !important; }
             .uk-shadow-${types[i]}-small { box-shadow: 0 2px 8px var( --color-${types[i]} ) !important; }
-            .uk-shadow-${types[i]}-large { box-shadow: 0 14px 25px var( --color-${types[i]} ) !important; }
+            .uk-shadow-${types[i]}-large { box-shadow: 0 15px 8px var( --color-${types[i]} ) !important; }
+            .uk-shadow-${types[i]}-medium { box-shadow: 0 10px 8px var( --color-${types[i]} ) !important; }
+            .uk-shadow-${types[i]}-xlarge { box-shadow: 0 20px 8px var( --color-${types[i]} ) !important; }
+            .uk-shadow-${types[i]}-2xlarge { box-shadow: 0 40px 8px var( --color-${types[i]} ) !important; }
         `);
     }
 
