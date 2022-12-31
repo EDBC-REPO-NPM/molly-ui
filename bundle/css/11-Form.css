@@ -46,9 +46,9 @@
  */
 /* Webkit */
 .uk-range::-webkit-slider-runnable-track {
-  height: 3px;
   background: #ebebeb;
   border-radius: 500px;
+  height: 3px;
 }
 .uk-range:focus::-webkit-slider-runnable-track,
 .uk-range:active::-webkit-slider-runnable-track {
@@ -56,9 +56,9 @@
 }
 /* Firefox */
 .uk-range::-moz-range-track {
-  height: 3px;
   background: #ebebeb;
   border-radius: 500px;
+  height: 3px;
 }
 .uk-range:focus::-moz-range-track {
   background: #dedede;
@@ -74,10 +74,9 @@
   -webkit-appearance: none;
   margin-top: -7px;
   /* 2 */
-  height: 15px;
-  width: 15px;
-  border-radius: 500px;
   background: #fff;
+  border-radius: 500px;
+  height: 15px; width: 15px;
   border: 1px solid #cccccc;
 }
 /* Firefox */
@@ -85,10 +84,9 @@
   /* 1 */
   border: none;
   /* 2 */
-  height: 15px;
-  width: 15px;
   margin-top: -7px;
-  border-radius: 500px;
   background: #fff;
+  border-radius: 500px;
+  height: 15px; width: 15px;
   border: 1px solid #cccccc;
 }

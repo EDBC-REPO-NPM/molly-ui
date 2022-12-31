@@ -1,0 +1,10 @@
+/*-──────────────────────────────────────────────────────────────────────────-*/
+
+.uk-index-initial { z-index: initial }
+.uk-index-inherit { z-index: inherit }
+.uk-index-auto { z-index: auto }
+.uk-index-middle { z-index: 0; }
+.uk-index-back { z-index: -1; }
+.uk-index-top { z-index: 1; }
+
+/*-──────────────────────────────────────────────────────────────────────────-*/

@@ -52,8 +52,7 @@
  * Remove the inner border and padding in Firefox.
  */
 .uk-button::-moz-focus-inner {
-  border: 0;
-  padding: 0;
+  border: 0; padding: 0;
 }
 /* Hover */
 .uk-button:hover {
@@ -277,3 +276,71 @@
   z-index: 1;
 }
 
+/*-────────────────────────────────────────────────────────────────────────────────────-*/
+
+/°
+(()=>{
+
+    const data = 'primary|secondary|success|warning|danger|default|mute'.split('|');
+    const done = '1|1|1|0|1|0|0'.split('|');
+    return data.map((x,i)=>`
+
+        @keyframes uk-animation-${x}-enphasis-hover {
+            from { 
+                background-color: auto; 
+                border-color: auto;
+                color: auto;
+            }
+            to {
+                color: var(--color-${done[i]=='1'?'default':'secondary'});
+                background-color: var(--color-${x}); 
+                border-color: var(--color-${x});
+            }
+        }
+        
+        .uk-${x}-enphasis-hover:hover { 
+            animation-name: uk-animation-${x}-enphasis-hover; 
+            animation-fill-mode: forwards;
+            animation-direction: normal;
+            animation-duration: 0.5s;
+        }
+
+    `).join('');
+
+})()
+°/
+
+/*-────────────────────────────────────────────────────────────────────────────────────-*/
+
+/°
+(()=>{
+
+    const data = 'primary|secondary|success|warning|danger|default|mute'.split('|');
+    const done = '1|1|1|0|1|0|0'.split('|');
+    return data.map((x,i)=>`
+
+        @keyframes uk-animation-${x}-hover {
+            from { 
+                background-color: auto; 
+                border-color: auto;
+                color: auto;
+            } to {
+                border-color: var(--color-${x});
+                background-color: transparent; 
+                color: var(--color-${x});
+            }
+        }
+        
+        .uk-${x}-hover:hover { 
+            animation-name: uk-animation-${x}-hover; 
+            animation-fill-mode: forwards;
+            animation-direction: normal;
+            animation-duration: 0.5s;
+        }
+
+    `).join('');
+
+})()
+°/
+
+/*-────────────────────────────────────────────────────────────────────────────────────-*/

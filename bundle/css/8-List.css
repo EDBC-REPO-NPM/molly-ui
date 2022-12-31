@@ -1,7 +1,7 @@
 
 .uk-list {
-  padding: 0;
   list-style: none;
+  padding: 0;
 }
 /*
  * Remove margin from the last-child
@@ -41,15 +41,15 @@
 .uk-list-square > ::before,
 .uk-list-decimal > ::before,
 .uk-list-hyphen > ::before {
-  content: "";
+  list-style-position: inside;
+  margin-bottom: -1.5em;
   position: relative;
+  display: list-item;
+  text-align: right;
+  height: 1.5em;
   left: -30px;
   width: 30px;
-  height: 1.5em;
-  margin-bottom: -1.5em;
-  display: list-item;
-  list-style-position: inside;
-  text-align: right;
+  content: "";
 }
 .uk-list-disc > ::before {
   list-style-type: disc;
@@ -89,16 +89,16 @@
   padding-left: 30px;
 }
 .uk-list-bullet > ::before {
-  content: "";
-  display: list-item;
-  position: relative;
-  left: -30px;
-  width: 30px;
-  height: 1.5em;
-  margin-bottom: -1.5em;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%206%206%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23666%22%20cx%3D%223%22%20cy%3D%223%22%20r%3D%223%22%20%2F%3E%0A%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  margin-bottom: -1.5em;
+  position: relative;
+  display: list-item;
+  height: 1.5em;
+  left: -30px;
+  width: 30px;
+  content: "";
 }
 /* Style modifiers
  ========================================================================== */
@@ -106,8 +106,7 @@
  * Divider
  */
 .uk-list-divider > :nth-child(n+2) {
-  margin-top: 10px;
-  padding-top: 10px;
+  margin-top: 10px; padding-top: 10px;
   border-top: 1px solid #e5e5e5;
 }
 /*
@@ -117,8 +116,8 @@
   padding: 10px 10px;
 }
 .uk-list-striped > *:nth-of-type(odd) {
-  border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
 }
 .uk-list-striped > :nth-of-type(odd) {
   background: #f8f8f8;
@@ -140,12 +139,10 @@
  * Divider
  */
 .uk-list-large.uk-list-divider > :nth-child(n+2) {
-  margin-top: 20px;
-  padding-top: 20px;
+  margin-top: 20px; padding-top: 20px;
 }
 .uk-list-collapse.uk-list-divider > :nth-child(n+2) {
-  margin-top: 0;
-  padding-top: 0;
+  margin-top: 0; padding-top: 0;
 }
 /*
  * Striped
@@ -154,8 +151,7 @@
   padding: 20px 10px;
 }
 .uk-list-collapse.uk-list-striped > * {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 0; padding-bottom: 0;
 }
 .uk-list-large.uk-list-striped > :nth-child(n+2),
 .uk-list-collapse.uk-list-striped > :nth-child(n+2) {

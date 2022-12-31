@@ -80,9 +80,31 @@
   for( var i in data ){
     result.push(`
       .uk-text-${data[i]} { color: var(--color-${data[i]}) !important; }
+      .uk-text-${data[i]}>:not([class*='uk-text']){ color: var(--color-${data[i]}) !important; }
     `);
   } return result.join('\n');
 })();°/
+
+/°
+(()=>{
+  const data = 'top|middle|bottom|baseline'.split('|');
+  return data.map((x,i)=>`
+    .uk-text-${x} { vertical-align: ${x} !important; }
+    .uk-text-${x} >:not([class*='uk-text']) { vertical-align: ${x} !important; }
+  `).join('');
+})()
+°/
+
+/°
+(()=>{
+  const data = 'left|right|center|justify'.split('|');
+  return data.map((x,i)=>`
+    .uk-text-${x} { text-align: ${x} !important; }
+    .uk-text-${x} >:not([class*='uk-text']) { text-align: ${x} !important; }
+  `).join('');
+})()
+°/
+
 /* TODO: css compiled */
 
 /* Background modifier
@@ -94,93 +116,105 @@
  * 4. Style
  */
 .uk-text-background {
+  display: inline-block;
   /* 1 */
   -webkit-background-clip: text;
   /* 2 */
   color: transparent !important;
   /* 3 */
-  display: inline-block;
-  /* 4 */
   background-color: var(--color-primary);
 }
 /* Alignment modifiers
  ========================================================================== */
-.uk-text-left {
-  text-align: left !important;
-}
-.uk-text-right {
-  text-align: right !important;
-}
-.uk-text-center {
-  text-align: center !important;
-}
-.uk-text-justify {
-  text-align: justify !important;
-}
+
 /* Phone landscape and bigger */
 @media (min-width: 640px) {
-  .uk-text-left\@s {
-    text-align: left !important;
-  }
-  .uk-text-right\@s {
-    text-align: right !important;
-  }
-  .uk-text-center\@s {
-    text-align: center !important;
-  }
+  /°
+  (()=>{
+    const data = 'left|right|center|justify'.split('|');
+    return data.map((x,i)=>`
+      .uk-text-${x}\\@s { text-align: ${x} !important; }
+      .uk-text-${x}\\@s >:not([class*='uk-text']) { text-align: ${x} !important; }
+    `).join('');
+  })()
+  °/
+  /°
+  (()=>{
+    const data = 'top|middle|bottom|baseline'.split('|');
+    return data.map((x,i)=>`
+      .uk-text-${x}\\@s { vertical-align: ${x} !important; }
+      .uk-text-${x}\\@s >:not([class*='uk-text']) { vertical-align: ${x} !important; }
+    `).join('');
+  })()
+  °/
 }
 /* Tablet landscape and bigger */
 @media (min-width: 960px) {
-  .uk-text-left\@m {
-    text-align: left !important;
-  }
-  .uk-text-right\@m {
-    text-align: right !important;
-  }
-  .uk-text-center\@m {
-    text-align: center !important;
-  }
+  /°
+  (()=>{
+    const data = 'left|right|center|justify'.split('|');
+    return data.map((x,i)=>`
+      .uk-text-${x}\\@m { text-align: ${x} !important; }
+      .uk-text-${x}\\@m >:not([class*='uk-text']) { text-align: ${x} !important; }
+    `).join('');
+  })()
+  °/
+  /°
+  (()=>{
+    const data = 'top|middle|bottom|baseline'.split('|');
+    return data.map((x,i)=>`
+      .uk-text-${x}\\@m { vertical-align: ${x} !important; }
+      .uk-text-${x}\\@m >:not([class*='uk-text']) { vertical-align: ${x} !important; }
+    `).join('');
+  })()
+  °/
 }
+
 /* Desktop and bigger */
 @media (min-width: 1200px) {
-  .uk-text-left\@l {
-    text-align: left !important;
-  }
-  .uk-text-right\@l {
-    text-align: right !important;
-  }
-  .uk-text-center\@l {
-    text-align: center !important;
-  }
+  /°
+  (()=>{
+    const data = 'left|right|center|justify'.split('|');
+    return data.map((x,i)=>`
+      .uk-text-${x}\\@l { text-align: ${x} !important; }
+      .uk-text-${x}\\@l >:not([class*='uk-text']) { text-align: ${x} !important; }
+    `).join('');
+  })()
+  °/
+  /°
+  (()=>{
+    const data = 'top|middle|bottom|baseline'.split('|');
+    return data.map((x,i)=>`
+      .uk-text-${x}\\@l { vertical-align: ${x} !important; }
+      .uk-text-${x}\\@l >:not([class*='uk-text']) { vertical-align: ${x} !important; }
+    `).join('');
+  })()
+  °/
 }
+
 /* Large screen and bigger */
 @media (min-width: 1600px) {
-  .uk-text-left\@xl {
-    text-align: left !important;
-  }
-  .uk-text-right\@xl {
-    text-align: right !important;
-  }
-  .uk-text-center\@xl {
-    text-align: center !important;
-  }
+  /°
+  (()=>{
+    const data = 'left|right|center|justify'.split('|');
+    return data.map((x,i)=>`
+      .uk-text-${x}\\@xl { text-align: ${x} !important; }
+      .uk-text-${x}\\@xl >:not([class*='uk-text']) { text-align: ${x} !important; }
+    `).join('');
+  })()
+  °/
+  /°
+  (()=>{
+    const data = 'top|middle|bottom|baseline'.split('|');
+    return data.map((x,i)=>`
+      .uk-text-${x}\\@xl { vertical-align: ${x} !important; }
+      .uk-text-${x}\\@xl >:not([class*='uk-text']) { vertical-align: ${x} !important; }
+    `).join('');
+  })()
+  °/
 }
+
 /*
- * Vertical
- */
-.uk-text-top {
-  vertical-align: top !important;
-}
-.uk-text-middle {
-  vertical-align: middle !important;
-}
-.uk-text-bottom {
-  vertical-align: bottom !important;
-}
-.uk-text-baseline {
-  vertical-align: baseline !important;
-}
-/* Wrap modifiers
  ========================================================================== */
 /*
  * Prevent text from wrapping onto multiple lines
